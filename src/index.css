@@ -1,0 +1,142 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.gridRow {
+  color: green;
+  display: flex;
+ 
+  flex-direction: row;
+  font-size: 12px;
+}
+
+
+.date{
+  border-style: ridge;
+  width: 60px;
+}
+.method{
+  border-style: ridge;
+  width: 80px;
+
+}
+.correspondent{
+  border-style: ridge;
+  width: 80px;
+}
+.time{
+  border-style: ridge;
+  width: 40px;
+
+}
+.phase{
+  border-style: ridge;
+  width: 60px;
+
+}
+.subjectMatter{
+  border-style: ridge;
+  width: 140px;
+
+}
+
+.reCord {
+  border-style: ridge;
+  width: 320px;
+  margin: 30px;
+  padding: 30px;
+  font-size: 2rem;
+}
+
+.newFile {
+  border-style: ridge;
+  width: 190px;
+  margin: 10px;
+  padding: 10px;
+  font-size:2rem;
+}
+
+.homePage {
+  
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  
+}
+
+.filesDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+  
+}
+
+.placeholder {
+  background-color: #f0f0f0;
+  color: #777777;
+  padding: 10px;
+  border: 1px dashed #cccccc;
+  font-style: italic;
+}
+
+.findCase {
+  font-size: 30px;
+}
+
+.options {
+  font-size: 30px;
+}
+
+.courtAttendance {
+  font-size: 30px;
+}
+
+.personalAttendances {
+  font-size: 30px;
+}
+
+.documents {
+  font-size: 30px;
+  }
+
+  .correspondence {
+    font-size: 30px;
+  }
+
+  .telephone {
+    font-size: 30px;
+  }
+
+  .optionsButtons{
+    margin: 10px;
+  }
+
+  button {
+    font-size : 30px;
+  }
+
+  .option {
+    margin: 15px;
+  }
+
+  input {
+    font-size: 30px;
+  }
