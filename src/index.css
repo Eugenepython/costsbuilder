@@ -26,7 +26,7 @@
   border-style: ridge;
   max-width: 40px;
   min-width: 40px;
-
+  overflow: auto;
 
 }
 .method{
@@ -34,11 +34,11 @@
   width: 150px;
   max-width: 50px;
   min-width: 50px;
-
+  overflow: auto;
 }
 .correspondent{
   border-style: ridge;
-
+  overflow: auto;
   max-width: 60px;
   min-width: 60px;
 }
@@ -46,21 +46,21 @@
   border-style: ridge;
   max-width: 30px;
   min-width: 30px;
-
+  overflow: auto;
 }
 .phase{
   border-style: ridge;
   width: 60px;
   max-width: 60px;
   min-width: 60px;
-
+  overflow: auto;
 }
 .subjectMatter{
   border-style: ridge;
   width: 140px;
   max-width: 50px;
   min-width: 50px;
-
+  overflow: auto;
 }
 
 .reCord {
