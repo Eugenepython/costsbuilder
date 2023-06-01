@@ -15,40 +15,51 @@
 }
 
 .gridRow {
-  color: green;
+  color: whitesmoke;
   display: flex;
- 
   flex-direction: row;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 
 .date{
   border-style: ridge;
-  width: 60px;
+  max-width: 40px;
+  min-width: 40px;
+
+
 }
 .method{
   border-style: ridge;
-  width: 80px;
+  width: 150px;
+  max-width: 50px;
+  min-width: 50px;
 
 }
 .correspondent{
   border-style: ridge;
-  width: 80px;
+
+  max-width: 60px;
+  min-width: 60px;
 }
 .time{
   border-style: ridge;
-  width: 40px;
+  max-width: 30px;
+  min-width: 30px;
 
 }
 .phase{
   border-style: ridge;
   width: 60px;
+  max-width: 60px;
+  min-width: 60px;
 
 }
 .subjectMatter{
   border-style: ridge;
   width: 140px;
+  max-width: 50px;
+  min-width: 50px;
 
 }
 
@@ -68,7 +79,7 @@
 }
 
 .newCase {
-  border-style: ridge;
+  //border-style: ridge;
   text-align: center;
   height: 90vh;
   flex-direction: column;
@@ -103,8 +114,8 @@
 }
 
 .homePage {
-  //border-style: dotted;
-  width: 80%;
+  
+  width: 90%;
   margin: auto;
   padding: 10px;
   display: flex;

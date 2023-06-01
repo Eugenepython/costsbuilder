@@ -34,6 +34,15 @@ const firstKeyPress = (event) => {
     }
   };
 
+  function firstKey(){
+    console.log("hi")
+    const inputElement = document.getElementById('firstKey'); 
+    const value = inputElement.value;
+    setTime(value);
+    inputElement.value = ''; 
+    setDisplaySubjectMatter(true)
+    setDisplayTimeLength(false)
+  }
 
 const thirdKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -45,12 +54,29 @@ const thirdKeyPress = (event) => {
       }
     };
 
+  function thirdKey(){
+    const inputElement = document.getElementById('thirdKey'); 
+    const value = inputElement.value;
+    setSubjectMatter(value);
+    inputElement.value = ''; 
+    setDisplayPhase(true)
+    setDisplaySubjectMatter(false)
+  }
+
 const fourthKeyPress = (event) => {
       if (event.key === 'Enter') {
          setDisplayDate(false)
          setFinished(true)
          }
         };
+
+function fourthKey(){
+  const inputElement = document.getElementById('fourthKey'); 
+    const value = inputElement.value;
+    setDisplayDate(false)
+    setFinished(true)
+    setDateValue(value);
+}
 
 function handleClick(x){
     setPhase(x)
@@ -92,12 +118,14 @@ return (
 
   <div style={{ display: displayTimeLength ? 'block' : 'none' }}>
 <p>How long did it take you to consider these documents and issues?</p>
-  <input className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <input id = 'firstKey' className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <button onClick = {firstKey}>&#x2611;</button>
   </div>
 
 <div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >What were you considering or analysing and what was it about? 
-<input className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
-<p>{subjectMatter}</p></div>
+<input id = 'thirdKey' className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
+<button onClick = {thirdKey}>&#x2611;</button>
+</div>
 
 <div style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you consider this would fall into?
 <br></br>
@@ -105,7 +133,8 @@ return (
 </div>
 
 <div style={{ display: displayDate ? 'block' : 'none' }} >What date did this happen?
-<input className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<input id = 'fourthKey' className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<button onClick = {fourthKey}>&#x2611;</button>
 </div>
 
 

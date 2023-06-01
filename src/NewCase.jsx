@@ -84,16 +84,6 @@ function clickClaimant() {
   inputElement.value = ''; // Clear the input box
 }
 
-function clickDefendant() {
-  const inputElement = document.getElementById('dInput'); // Get the input element by class name or use an appropriate selector
-  const defendantValue = inputElement.value;
-  const capitalizedString = capitalizeFirstLetter(defendantValue);
-  setDefendant(capitalizedString);
-  setIsDefendant(true);
-  inputElement.value = ''; // Clear the input box
-}
-
-
 function handleClaimant(event){
   console.log(event.target.value)
   console.log("claimant")
@@ -106,6 +96,17 @@ function handleClaimant(event){
     setIsClaimant(true)
   }
 }
+
+function clickDefendant() {
+  const inputElement = document.getElementById('dInput'); // Get the input element by class name or use an appropriate selector
+  const defendantValue = inputElement.value;
+  const capitalizedString = capitalizeFirstLetter(defendantValue);
+  setDefendant(capitalizedString);
+  setIsDefendant(true);
+  inputElement.value = ''; // Clear the input box
+}
+
+
 
 
 function handleDefendant(event){
@@ -163,7 +164,6 @@ function conFirm(){
 <div>
 <input disabled={disabled} id = 'cInput' className = 'input'   placeholder="claimant" onKeyUp={handleClaimant}></input>
 <button disabled={disabled}  onClick={() => clickClaimant()}>&#x2611;</button>
-
 </div>
 
 <div><input disabled={disabled}  id = 'dInput' className = 'input' placeholder="defendant" onKeyUp={handleDefendant}></input>

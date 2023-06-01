@@ -28,31 +28,62 @@ const firstKeyPress = (event) => {
     if (event.key === 'Enter') {
       const value = event.target.value;
       setTime(value);
-      event.target.value = ''; // Reset the input field
+      event.target.value = ''; 
         setDisplayCorrespondence(true)
         setDisplayTimeLength(false)
     }
   };
 
+  function firstKey(){
+    const inputElement = document.getElementById('firstKey'); 
+    const value = inputElement.value;
+    setTime(value);
+    inputElement.value = ''; 
+      setDisplayCorrespondence(true)
+      setDisplayTimeLength(false)
+  }
+
+
+
   const secondKeyPress = (event) => {
     if (event.key === 'Enter') {
       const value = event.target.value;
       setCorrespondent(value);
-      event.target.value = ''; // Reset the input field
+      event.target.value = ''; 
         setDisplaySubjectMatter(true)
         setDisplayCorrespondence(false)
     }
   };
 
+  function secondKey(){
+    const inputElement = document.getElementById('secondKey'); 
+    const value = inputElement.value;
+    setCorrespondent(value);
+    inputElement.value = ''; 
+    setDisplaySubjectMatter(true)
+    setDisplayCorrespondence(false)
+  }
+
+
+
 const thirdKeyPress = (event) => {
     if (event.key === 'Enter') {
         const value = event.target.value;
         setSubjectMatter(value);
-        event.target.value = ''; // Reset the input field
+        event.target.value = ''; 
          setDisplayPhase(true)
          setDisplaySubjectMatter(false)
       }
     };
+
+function thirdKey(){
+  const inputElement = document.getElementById('thirdKey'); 
+  const value = inputElement.value;
+  setSubjectMatter(value);
+  inputElement.value = ''; 
+  setDisplayPhase(true)
+  setDisplaySubjectMatter(false)
+}
 
 const fourthKeyPress = (event) => {
       if (event.key === 'Enter') {
@@ -60,6 +91,14 @@ const fourthKeyPress = (event) => {
          setFinished(true)
          }
         };
+
+  function fourthKey(){
+    const inputElement = document.getElementById('fourthKey'); 
+    const value = inputElement.value;
+    setDateValue(value);
+    setDisplayDate(false)
+    setFinished(true)
+  }
 
 function handleClick(x){
     setPhase(x)
@@ -102,16 +141,19 @@ return (
 
   <div style={{ display: displayTimeLength ? 'block' : 'none' }}>
 <p>How long did this court attendance last?</p>
-  <input className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <input id = 'firstKey' className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <button onClick={firstKey}>&#x2611;</button>
   </div>
 
 <div style={{ display: displayCorrespondence ? 'block' : 'none' }} >Which court were you attending?
-<input className = 'optionInput' type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
+<input id = 'secondKey' className = 'optionInput' type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
+ <button onClick={secondKey}>&#x2611;</button>
  </div>
 
 <div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >Please describe this court attendance?
-<input className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
-<p>{subjectMatter}</p></div>
+<input id = 'thirdKey' className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
+<button onClick = {thirdKey}>&#x2611;</button>
+</div>
 
 <div style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you consider this would fall into?
 <br></br>
@@ -119,7 +161,8 @@ return (
 </div>
 
 <div style={{ display: displayDate ? 'block' : 'none' }} >What date did this happen?
-<input className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<input id = 'fourthKey' className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<button onClick = {fourthKey}>&#x2611;</button>
 </div>
 
 <p>Time : {time}  minutes</p>

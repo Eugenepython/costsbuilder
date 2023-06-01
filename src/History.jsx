@@ -29,7 +29,7 @@ const theLedger = history.map((x) => {
         <>
         <div className = 'gridRow'>
         <div className = 'date'>{x.date}</div>
-        <div className = 'method'    >{x.method}</div>
+        <div className = 'method'>{x.method}</div>
         <div className = 'correspondent'>{x.correspondent}</div>
         <div className ='time'>{x.time}</div>
         <div className = 'phase'>{x.phase}</div>
