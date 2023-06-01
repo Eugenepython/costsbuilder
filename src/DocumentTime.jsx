@@ -22,13 +22,13 @@ const currentDate = new Date().toISOString().slice(0, 10);
 const [dateValue, setDateValue] = useState(currentDate);
 
 const thePhases = ['initial statements of case', 'issue/statements of case', 'disclosure', 'witness statements', 'expert reports', 'CMC', 'PTR', 'trial preparation', 'trial', 'settlement'] 
-const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>Phase: {item}</button>);
+const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>{item}</button>);
 
 const firstKeyPress = (event) => {
     if (event.key === 'Enter') {
       const value = event.target.value;
       setTime(value);
-      event.target.value = ''; // Reset the input field
+      event.target.value = ''; 
         setDisplaySubjectMatter(true)
         setDisplayTimeLength(false)
     }
@@ -39,7 +39,7 @@ const thirdKeyPress = (event) => {
     if (event.key === 'Enter') {
         const value = event.target.value;
         setSubjectMatter(value);
-        event.target.value = ''; // Reset the input field
+        event.target.value = ''; 
          setDisplayPhase(true)
          setDisplaySubjectMatter(false)
       }
@@ -92,19 +92,20 @@ return (
 
   <div style={{ display: displayTimeLength ? 'block' : 'none' }}>
 <p>How long did it take you to consider these documents and issues?</p>
-  <input type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <input className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
   </div>
 
 <div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >What were you considering or analysing and what was it about? 
-<input type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
+<input className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
 <p>{subjectMatter}</p></div>
 
 <div style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you consider this would fall into?
+<br></br>
 {theButtons}
 </div>
 
 <div style={{ display: displayDate ? 'block' : 'none' }} >What date did this happen?
-<input type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<input className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
 </div>
 
 
@@ -118,9 +119,11 @@ return (
   <button onClick={() => submitButton()}>Submit</button>
   </Link>
   </div>
-  <Link to= '/options' >
-   <button >Go back to options</button>
+
+  <Link to="/">
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
+
     </div>
        
     )

@@ -46,7 +46,9 @@ function NewCase({updateData}) {
   const [generate, setGenerate] = useState(true)
   const [happyDetails, setHappyDetails] = useState(false)
   const [details, setDetails] = useState(false)
- 
+  const [disabled, setDisabled] = useState(false)
+
+
 
 function geneRate(){
   setGenerate(false)
@@ -73,7 +75,29 @@ function geneRate(){
   setRef(newRef)
 }
   
+function clickClaimant() {
+  const inputElement = document.getElementById('cInput'); // Get the input element by class name or use an appropriate selector
+  const claimantValue = inputElement.value;
+  const capitalizedString = capitalizeFirstLetter(claimantValue);
+  setClaimant(capitalizedString);
+  setIsClaimant(true);
+  inputElement.value = ''; // Clear the input box
+}
+
+function clickDefendant() {
+  const inputElement = document.getElementById('dInput'); // Get the input element by class name or use an appropriate selector
+  const defendantValue = inputElement.value;
+  const capitalizedString = capitalizeFirstLetter(defendantValue);
+  setDefendant(capitalizedString);
+  setIsDefendant(true);
+  inputElement.value = ''; // Clear the input box
+}
+
+
 function handleClaimant(event){
+  console.log(event.target.value)
+  console.log("claimant")
+  const capitalizedString = capitalizeFirstLetter(event.target.value);
   if (event.keyCode === 13) {
     //console.log(event.target.value)
     const capitalizedString = capitalizeFirstLetter(event.target.value);
@@ -83,8 +107,10 @@ function handleClaimant(event){
   }
 }
 
+
 function handleDefendant(event){
-  if (event.keyCode === 13) {
+  console.log("defendant")
+  if (event.keyCode === 13 || event.type === 'click') {
     //console.log(event.target.value)
     const capitalizedString = capitalizeFirstLetter(event.target.value);
     setDefendant(capitalizedString)
@@ -94,6 +120,7 @@ function handleDefendant(event){
 }
 
 function saveCase(){
+  setDisabled(true)
   //console.log(ref)
   setHappyDetails(false)
   setHappyToGo(true)
@@ -125,24 +152,32 @@ function conFirm(){
 
   return (
     <>
-      <div>
+      <div className = 'newCase'>
  
       <p>New Case</p>
 
     <p>enter in details of new case</p>
 
-<input placeholder="claimant" onKeyDown={handleClaimant}></input>
-<input placeholder="defendant" onKeyDown={handleDefendant}></input>
+
+
+<div>
+<input disabled={disabled} id = 'cInput' className = 'input'   placeholder="claimant" onKeyUp={handleClaimant}></input>
+<button disabled={disabled}  onClick={() => clickClaimant()}>&#x2611;</button>
+
+</div>
+
+<div><input disabled={disabled}  id = 'dInput' className = 'input' placeholder="defendant" onKeyUp={handleDefendant}></input>
+<button disabled={disabled}  onClick ={() => clickDefendant()}>&#x2611;</button></div>
 
 <p>Claimant : {claimant}</p>
 <p>Defendant : {defendant}</p>
 <p>Reference : {ref}</p>
 
-<button style = {{display: isClaimant && isDefendant && generate ? 'block' : 'none'}} onClick = {geneRate}>Generate reference</button>
+<button className = 'newCaseBtns' style = {{display: isClaimant && isDefendant && generate ? 'block' : 'none'}} onClick = {geneRate}>Generate reference</button>
 
-<div style = {{display: happyDetails ? 'block' : 'none'}} ><button onClick = {saveCase} style = {{display: ref ? 'block' : 'none'}}>Happy with details?</button></div>
+<button style = {{display: happyDetails ? 'block' : 'none'}} className = 'newCaseBtns' onClick = {saveCase} >Happy with details?</button>
 
-<button style = {{display: happyToGo ? 'block' : 'none'}} onClick = {conFirm}>Confirm</button>
+<button className = 'newCaseBtns' style = {{display: happyToGo ? 'block' : 'none'}} onClick = {conFirm}>Confirm</button>
 
 <div className = 'placeholder' style = {{display : details ? 'block' : 'none'}}>
 <p>Case created as below</p>
@@ -154,7 +189,7 @@ function conFirm(){
 </div>
 
 <Link to="/">
-  <button  >Go to Home Page</button>
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
 
       </div>

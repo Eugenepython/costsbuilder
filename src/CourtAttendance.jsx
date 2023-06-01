@@ -22,7 +22,7 @@ const currentDate = new Date().toISOString().slice(0, 10);
 const [dateValue, setDateValue] = useState(currentDate);
 
 const thePhases = ['initial statements of case', 'issue/statements of case', 'disclosure', 'witness statements', 'expert reports', 'CMC', 'PTR', 'trial preparation', 'trial', 'settlement'] 
-const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>Phase: {item}</button>);
+const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>{item}</button>);
 
 const firstKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -102,23 +102,24 @@ return (
 
   <div style={{ display: displayTimeLength ? 'block' : 'none' }}>
 <p>How long did this court attendance last?</p>
-  <input type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <input className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
   </div>
 
 <div style={{ display: displayCorrespondence ? 'block' : 'none' }} >Which court were you attending?
-<input type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
+<input className = 'optionInput' type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
  </div>
 
 <div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >Please describe this court attendance?
-<input type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
+<input className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
 <p>{subjectMatter}</p></div>
 
 <div style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you consider this would fall into?
+<br></br>
 {theButtons}
 </div>
 
 <div style={{ display: displayDate ? 'block' : 'none' }} >What date did this happen?
-<input type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<input className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
 </div>
 
 <p>Time : {time}  minutes</p>
@@ -131,12 +132,16 @@ return (
   <button onClick={() => submitButton()}>Submit</button>
   </Link>
   </div>
-  <Link to= '/options' >
-   <button>Go back to options</button>
+ 
+  <Link to="/">
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
-    </div>
+   </div>
+
        
     )
   }
 
   export default CourtAttendance
+
+  

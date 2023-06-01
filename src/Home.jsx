@@ -7,12 +7,12 @@ function Home() {
     <>
       <div className = 'homePage'>
     <p>Home Page</p>
-    <p>Did something just happen! Click below to get it down and done! </p>
+    <p>Did something just happen? Click below to get it down and done! </p>
 
 <br></br>
     
     <Link to="/case">
-    <button className = 'reCord'>Add time/Check existing files</button>
+    <button className = 'reCord'>Add time or check existing files</button>
         </Link>
 
 <br></br>

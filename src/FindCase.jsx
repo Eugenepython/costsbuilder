@@ -126,7 +126,7 @@ function showFiles(){
 
       {file.reference ? (
   <Link to= '/options' >
-   <button onClick={() => handleClick(file)}>Proceed to add time</button>
+   <button className = 'findCaseOptions' onClick={() => handleClick(file)}>Proceed to add time</button>
   </Link>
 ) : ''}
 
@@ -134,7 +134,7 @@ function showFiles(){
 
       {file.reference ? (
       <Link to= '/history' >
-      <button onClick={() => showHistory(file.reference, file)}>Show case file</button>
+      <button className = 'findCaseOptions' onClick={() => showHistory(file.reference, file)}>Show case file</button>
         </Link>
       ) : ''}
  
@@ -144,7 +144,7 @@ function showFiles(){
           
 
         <Link to="/">
-  <button >Go to Home Page</button>
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
         </div>
     )

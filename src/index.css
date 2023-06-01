@@ -54,28 +54,62 @@
 
 .reCord {
   border-style: ridge;
-  width: 320px;
-  margin: 30px;
-  padding: 30px;
-  font-size: 2rem;
+  margin: 15px;
+  padding: 15px;
+  font-size: 1rem;
 }
 
 .newFile {
   border-style: ridge;
   width: 190px;
-  margin: 10px;
+  margin: 15px;
   padding: 10px;
-  font-size:2rem;
+  font-size:1rem;
+}
+
+.newCase {
+  border-style: ridge;
+  text-align: center;
+  height: 90vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newCaseBtns {
+  margin: 10px;
+  width: 60%;
+}
+
+
+.goHome {
+  font-size: 0.5rem;
+  margin-bottom: 5px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+.input {
+  border-style: ridge;
+  width: 75%;
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 1rem;
 }
 
 .homePage {
-  
+  //border-style: dotted;
   width: 80%;
   margin: auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  font-size: 2rem;
+  font-size: 1rem;
   
 }
 
@@ -98,31 +132,32 @@
 }
 
 .findCase {
-  font-size: 30px;
+  font-size: 1rem;
+  
 }
 
 .options {
-  font-size: 30px;
+  font-size: 1rem;
 }
 
 .courtAttendance {
-  font-size: 30px;
+  font-size: 1rem;
 }
 
 .personalAttendances {
-  font-size: 30px;
+  font-size: 1rem;
 }
 
 .documents {
-  font-size: 30px;
+  font-size: 1rem;
   }
 
   .correspondence {
-    font-size: 30px;
+    font-size: 1rem;
   }
 
   .telephone {
-    font-size: 30px;
+    font-size: 1rem;
   }
 
   .optionsButtons{
@@ -130,7 +165,8 @@
   }
 
   button {
-    font-size : 30px;
+    font-size : 1rem;
+    border-radius: 5px;
   }
 
   .option {
@@ -140,3 +176,17 @@
   input {
     font-size: 30px;
   }
+
+
+
+.optionInput{
+  margin: 10px;
+  width: 60%;
+  font-size: 1rem;
+  padding : 2px;
+}
+
+  .findCaseOptions{
+    margin: 10px;
+  }
+ 

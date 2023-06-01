@@ -22,13 +22,13 @@ const currentDate = new Date().toISOString().slice(0, 10);
 
 
 const thePhases = ['initial statements of case', 'issue/statements of case', 'disclosure', 'witness statements', 'expert reports', 'CMC', 'PTR', 'trial preparation', 'trial', 'settlement'] 
-const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>Phase: {item}</button>);
+const theButtons = thePhases.map((item) => <button onClick={() => handleClick(item)}>{item}</button>);
 
  const firstKeyPress = (event) => {
     if (event.key === 'Enter') {
       const value = event.target.value;
       setTime(value);
-      event.target.value = ''; // Reset the input field
+      event.target.value = ''; 
         setDisplayCorrespondence(true)
         setDisplayTimeLength(false)
     }
@@ -38,7 +38,7 @@ const theButtons = thePhases.map((item) => <button onClick={() => handleClick(it
     if (event.key === 'Enter') {
       const value = event.target.value;
       setCorrespondent(value);
-      event.target.value = ''; // Reset the input field
+      event.target.value = ''; 
         setDisplaySubjectMatter(true)
         setDisplayCorrespondence(false)
     }
@@ -48,7 +48,7 @@ const thirdKeyPress = (event) => {
     if (event.key === 'Enter') {
         const value = event.target.value;
         setSubjectMatter(value);
-        event.target.value = ''; // Reset the input field
+        event.target.value = ''; 
          setDisplayPhase(true)
          setDisplaySubjectMatter(false)
       }
@@ -96,27 +96,29 @@ function submitButton(){
 
 return (
         <div className = 'telephone'>
+          <p>{newObject.reference}</p>
          <p>{newObject.claimant} v {newObject.defendant}</p>
 
 <div style={{ display: displayTimeLength ? 'block' : 'none' }}>
 <p>How long did the call last?</p>
-  <input type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
+  <  input className = 'optionInput' type="number" placeholder="minutes" onKeyDown={firstKeyPress}/>
   </div>
 
 <div style={{ display: displayCorrespondence ? 'block' : 'none' }} >Who did you speak with?
-<input type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
+<input className = 'optionInput' type="text" placeholder="correspondent" onKeyDown={secondKeyPress}/>
  </div>
 
-<div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >What did you guys talk about?
-<input type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
+<div style={{ display: displaySubjectMatter ? 'block' : 'none' }} >What did you talk about?
+<input className = 'optionInput' type="text" placeholder="subject matter" onKeyDown={thirdKeyPress}/>
 <p>{subjectMatter}</p></div>
 
-<div style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you think this would fall into?
+<div  style={{ display: displayPhase ? 'block' : 'none' }} >What phase do you think this would fall into?
+<br></br>
 {theButtons}
 </div>
 
 <div style={{ display: displayDate ? 'block' : 'none' }} >On what date did this happen?
-<input type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
+<input className = 'optionInput' type="date" value={dateValue} onChange={handleDateChange} onKeyDown={fourthKeyPress} />
 </div>
 
 
@@ -133,10 +135,11 @@ return (
   </Link>
   </div>
 
-  <Link to= '/options' >
-   <button >Go back to options</button>
+  <Link to="/">
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
-    </div>
+        </div>
+
        
     )
   }

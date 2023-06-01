@@ -20,30 +20,51 @@ function Options() {
       <p>Click on the action below</p>
 
 <div className = 'optionsButtons'>
+
       <Link to= '/options/telephone' >
-      <button className = 'option'>Telephone</button>
+      <button className = 'option' >
+      <span role="img" aria-label="Telephone">📞</span>
+     
+    <span>Telephone</span>
+      </button>
   </Link>
 
   <Link to= '/options/correspondence' >
-      <button className = 'option'>Correspondence</button>
+      <button className = 'option'>
+      <span role="img" aria-label="Writing">🖋️</span>
+    <span>Correspondence</span>
+    </button>
   </Link>
 
   <Link to= '/options/documents' >
-      <button className = 'option'>Documents</button>
+      <button className = 'option'>
+      <span role="img" aria-label="Reading">📖</span>
+    <span>Documents</span>
+      </button>
+
   </Link>
 
   <Link to= '/options/attendances' >
-      <button className = 'option'>Attendances</button>
+      <button className = 'option'>
+      <span role="img" aria-label="Meeting">🤝</span>
+    <span>Attendances</span>
+      
+      </button>
   </Link>
 
   <Link to= '/options/court' >
-      <button className = 'option'>Court attendance</button>
+      <button className = 'option'>
+      <span role="img" aria-label="Court">🏛️</span>
+    <span>Court</span>
+      </button>
   </Link>
       </div>
       <br></br>
       <br></br>
-  <Link to="/">
-  <button className = 'option'>Go to Home Page</button>
+
+
+   <Link to="/">
+  <button className = 'goHome' >Go to Home Page</button>
   </Link>
 
       </div>
