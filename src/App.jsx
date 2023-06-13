@@ -31,7 +31,7 @@ function App() {
     <MyContext.Provider value={{ newObject, setNewObject, setHistory, history, setNewEntry, newEntry, theData, setData }}>
     <BrowserRouter>
       <div>
-      <Link className="site-logo" to="/">Costs Builder!</Link>
+      <Link className="everTitle" to="/">Costs Builder</Link>
       
              </div>
       <Routes>
